@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
+import {fireEvent, render, screen} from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('check logo', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const logo = screen.getByText(/We serve most bright adventures for you./);
+  expect(logo).toHaveTextContent('We serve most bright adventures for you.');
+});
+
+
+test('checkbox', () => {
+  render(<App />);
+  const checkbox1 = screen.getByDisplayValue(false);
+  fireEvent.click(checkbox1);
+  expect(checkbox1.checked).toBe(true)
 });

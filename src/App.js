@@ -13,7 +13,7 @@ function Header() {
 function Main(props) {
     return (
         <section>
-            <p>We serve most {props.objective} advantures for you.</p>
+            <p>We serve most {props.objective} adventures for you.</p>
             <img src={landscape} height={400} alt="Picture of Serbian monastery"/>
             <ul style={{textAlign: "left"}}>
                 {props.destinations.map(e => <li key={e.id}>{e.title}</li>)}
@@ -44,15 +44,17 @@ function App(props) {
         false);
 
     const [temperature, setTemperature] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-
+        setLoading(true);
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${props.city}&limit=1&appid=cc0977fe19e431710c389f6490430d63`)
             .then(response1 => response1.json())
             .then((re) => {
                 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${re[0].lat}&lon=${re[0].lon}&units=metric&appid=cc0977fe19e431710c389f6490430d63`)
                     .then((response) => response.json())
                     .then(setTemperature)
+                    .then(() => setLoading(false))
             })
     }, [])
 
@@ -69,7 +71,10 @@ function App(props) {
                        onChange={toggle}/>
             </>
             <h2>Current direction is: {checked ? 'north' : 'south'}</h2>
-            <h2>{props.city} temperature is: {temperature ? temperature.main.temp + ' °C' : undefined}</h2>
+            <h2>{props.city} temperature is:
+                {temperature ?
+                    ' ' + temperature.main.temp + ' °C' :
+                    (loading ? 'loading...': undefined)}</h2>
             <Footer year={new Date().getFullYear()}/>
         </div>);
 
