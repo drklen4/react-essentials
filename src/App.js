@@ -1,11 +1,25 @@
 import './App.css';
-import landscape from "./Img2.PNG"
+import eze from "./images/main.jpg"
+import img1 from "./images/Img1.PNG"
+import img2 from "./images/Img2.PNG"
 import {useEffect, useReducer, useState} from "react";
+import {GiAirplaneDeparture} from "react-icons/gi";
+import Offer from "./components/Offer";
+import offersList from "./data.json";
+
+const imagesList = [img1, img2]
+const destinations = ["Asia", "America", "India"]
+const destinationsModified = destinations.map((dish, i) => ({id: i, title: dish}))
+
 
 function Header() {
     return (
         <header>
-            <h1>Plan your leisure with us</h1>
+            <h1 style={{backgroundColor: 'lightgrey', color: 'darkslategray'}}>
+                Plan your leisure with us
+                <GiAirplaneDeparture className="inline-block text-red-400"/>
+            </h1>
+
         </header>
     )
 }
@@ -14,7 +28,13 @@ function Main(props) {
     return (
         <section>
             <p>We serve most {props.objective} adventures for you.</p>
-            <img src={landscape} height={400} alt="Picture of Serbian monastery"/>
+            <img src={eze}
+                 style={{
+                backgroundImage: 'auto',
+                height: "10%",
+                width: "70%"
+            }}
+                 alt="Picture of Eze"/>
             <ul style={{textAlign: "left"}}>
                 {props.destinations.map(e => <li key={e.id}>{e.title}</li>)}
             </ul>
@@ -28,14 +48,6 @@ function Footer(props) {
             <p>Copyright {props.year}.</p>
         </footer>
     )
-}
-
-const destinations = ["Asia", "America", "India"]
-
-const destinationsModified = destinations.map((dish, i) => ({id: i, title: dish}))
-
-function SecretComponent() {
-    return <h1> Secret component </h1>
 }
 
 function App(props) {
@@ -63,13 +75,11 @@ function App(props) {
         <div className="App">
             <Header/>
             <Main objective="bright" destinations={destinationsModified}/>
-            <h4>{props.authorized ? <SecretComponent/> : false}</h4>
-            <>
-                <input style={{float: "left"}}
-                       type="checkbox"
-                       value={checked}
-                       onChange={toggle}/>
-            </>
+            {offersList.map(offer => {
+                let image = imagesList.filter(item => (item.toString().includes(offer.image)))
+                return (<Offer key={offer.id} name={offer.name} image={image} destination={offer.destination}
+                               dates={offer.dates} cost={offer.cost}/>)
+            })}
             <h2>Current direction is: {checked ? 'north' : 'south'}</h2>
             <h2>{props.city} temperature is:
                 {temperature ?
@@ -77,8 +87,6 @@ function App(props) {
                     (loading ? 'loading...': undefined)}</h2>
             <Footer year={new Date().getFullYear()}/>
         </div>);
-
-
 }
 
-export default App;
+

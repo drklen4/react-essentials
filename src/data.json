@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Beautiful sea side - Republic of South Africa",
+    "image": "Img2",
+    "destination": "RSA, Africa",
+    "dates": "01.08.2022 - 10.08.2022",
+    "cost": "1400"
+  },
+  {
+    "id": 2,
+    "name": "Northern Macedonia - mountain adventure",
+    "image": "Img1",
+    "destination": "Macedonia, Europe",
+    "dates": "22.09.2022 - 30.09.2022",
+    "cost": "2000"
+  }
+]
