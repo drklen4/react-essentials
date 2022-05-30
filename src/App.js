@@ -8,7 +8,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 
 function App(props) {
-    const destinations = ["Europe", "Asia", "America"];
+    const destinations = ["Europe", "Africa", "Asia", "All"];
     const destinationsModified = destinations.map((dest, i) => ({id: i, title: dest}));
 
     const [temperature, setTemperature] = useState(null);
@@ -36,7 +36,7 @@ function App(props) {
                         <Route path="/" element={<Main objective="bright" destinations={destinationsModified}/>} />
                         {destinationsModified.map(d => {
                             return (
-                                <Route path={`/${d.title}`} key={d.id} element={<Body city={props.city}/>} exact/>)
+                                <Route path={`/${d.title}`} key={d.id} element={<Body region={d.title}/>} exact/>)
                         })}
                         <Route path="*" element={<NotFound/>}/>
                     </Routes>
@@ -44,7 +44,7 @@ function App(props) {
                         {props.city} temperature is:
                         {temperature ?
                             ' ' + temperature.main.temp + ' °C' :
-                            (loading ? 'loading...' : undefined)}
+                            (loading ? ' loading...' : undefined)}
                     </p>
                     <Footer/>
                 </div>

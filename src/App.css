@@ -24,11 +24,6 @@
 }
 
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
-}
-
 button {
     padding: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -39,31 +34,36 @@ button {
     cursor: pointer;
 }
 
-h1 {
-    background-color: lightgrey;
-    color: darkslategray;
-}
-
 
 h3, h4 {
     margin-bottom: 0;
 }
 
-/*ul{*/
-/*    list-style-type:none;*/
-/*    display:flex;*/
-/*    justify-content: center;*/
+ul{
+    list-style-type:none;
+    display:flex;
+    justify-content: center;
 
-/*}*/
-/*ul li{*/
-/*    display: list-item;*/
-/*    !*background: wheat;*!*/
-/*    padding: 5px 10px;*/
-/*    color:black;*/
-/*    margin: 0 3px;*/
-/*}*/
-div{
+}
+ul li{
+    display: list-item;
+    /*background: wheat;*/
+    padding: 5px 10px;
+    color:black;
+    margin: 10px 3px;
+}
+
+body {
+    /*overflow: scroll;*/
     background: whitesmoke;
+    /*white-space: nowrap;*/
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+#root {
+    height: 100vh;
 }
 
 img{
@@ -75,3 +75,4 @@ img{
     color: blue;
     padding: 16px 16px 0 0;
 }
+

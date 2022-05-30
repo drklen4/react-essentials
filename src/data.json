@@ -4,6 +4,7 @@
     "name": "Beautiful sea side - Republic of South Africa",
     "image": "Img2",
     "destination": "RSA, Africa",
+    "region": "Africa",
     "dates": "01.08.2022 - 10.08.2022",
     "cost": "1400"
   },
@@ -12,7 +13,44 @@
     "name": "Northern Macedonia - mountain adventure",
     "image": "Img1",
     "destination": "Macedonia, Europe",
+    "region": "Europe",
     "dates": "22.09.2022 - 30.09.2022",
     "cost": "2000"
+  },
+  {
+    "id": 3,
+    "name": "Sunny Greece - seaside activities",
+    "destination": "Greece, Europe",
+    "image": "Img3",
+    "region": "Europe",
+    "dates": "20.09.2022 - 28.09.2022",
+    "cost": "895"
+  },
+  {
+    "id": 4,
+    "name": "Looking for the Pyramid",
+    "image": "Img4",
+    "destination": "Egypt, Africa",
+    "region": "Africa",
+    "dates": "15.08.2022 - 30.08.2022",
+    "cost": "1159"
+  },
+  {
+    "id": 5,
+    "name": "Orient taste",
+    "destination": "Thailand, Asia",
+    "image": "Img5",
+    "region": "Asia",
+    "dates": "01.08.2022 - 14.08.2022",
+    "cost": "2399"
+  },
+  {
+    "id": 6,
+    "name": "Temple on sunset",
+    "image": "Img6",
+    "destination": "Myanmar, Asia",
+    "region": "Asia",
+    "dates": "18.08.2022 - 03.09.2022",
+    "cost": "1879"
   }
 ]
