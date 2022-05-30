@@ -7,5 +7,5 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-    <App authorized = {false} city = {'Krakow'}/>
+    <App city = {'Krakow'}/>
 );
