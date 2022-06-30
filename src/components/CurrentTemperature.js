@@ -19,7 +19,7 @@ const CurrentTemperature = () => {
     }, [city])
 
     return (
-        <p style={{textAlign: "center", bottom: 40, position: "fixed", width: "100%"}}>
+        <p style={{textAlign: "center", position: "relative", width: "100%", marginTop: 50, bottom: 20}}>
             <label>
                 Your location:&nbsp;
                 <input type="text" value={city} onChange={(event) => {
