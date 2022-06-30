@@ -6,7 +6,7 @@ const Main = props => {
         <>
             <p>We serve most {props.objective} adventures for you.</p>
             <img src={eze}
-                 alt="Picture of Eze"/>
+                 alt="Eze"/>
             <ul>
                 {props.destinations.map(e => {
                         return (

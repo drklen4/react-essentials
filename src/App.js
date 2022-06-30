@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Body from "./components/Body";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
@@ -24,7 +24,7 @@ function App(props) {
                     .then(setTemperature)
                     .then(() => setLoading(false))
             })
-    }, [])
+    }, [props.city])
 
     return (
         <>
