@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const Main = props => {
     return (
         <>
-            <p>We serve most {props.objective} adventures for you.</p>
+            <p>We serve most bright adventures for you.</p>
             <img src={eze}
                  alt="Eze"/>
             <ul>
