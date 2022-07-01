@@ -8,10 +8,10 @@ const CurrentTemperature = () => {
 
     useEffect(() => {
             setLoading(true);
-            const response = fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=cc0977fe19e431710c389f6490430d63`)
+            const response = fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=XXXXXXXXXXXXXXXXXXXXXXXXXXX`)
                 .then(response1 => response1.json())
                 .then((re) => {
-                    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${re[0] ? re[0].lat : undefined}&lon=${re[0] ? re[0].lon : undefined}&units=metric&appid=cc0977fe19e431710c389f6490430d63`)
+                    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${re[0] ? re[0].lat : undefined}&lon=${re[0] ? re[0].lon : undefined}&units=metric&appid=XXXXXXXXXXXXXXXXXXX`)
                         .then((response) => response.json())
                         .then(setTemperature)
                         .then(() => setLoading(false))
