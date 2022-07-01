@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 
 const CurrentTemperature = () => {
+    // comment
 
     const [temperature, setTemperature] = useState(null);
     const [loading, setLoading] = useState(false);
