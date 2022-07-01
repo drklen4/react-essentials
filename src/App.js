@@ -18,7 +18,7 @@ function App() {
     const [itemCount, setItemCount] = useState(0);
     const [namesOfOffersAdded, setNamesOfOffersAdded] = useState([]);
 
-    const addItemToBasket = (name, itemCount) => {
+    const addItemToBasket = (name) => {
         if (!namesOfOffersAdded.find(e => e===name)) {
             let temp = namesOfOffersAdded;
             temp.push(name);
@@ -36,13 +36,13 @@ function App() {
                         <Route path="/" element={<Main destinations={destinationsModified}/>}/>
                         {destinationsModified.map(d => {
                             return (
-                                <Route path={`/${d.title}`} key={d.id} element={<Body region={d.title} addItemToBasket={addItemToBasket} itemCount={itemCount}/>} exact/>)
+                                <Route path={`/${d.title}`} key={d.id} element={<Body region={d.title} addItemToBasket={addItemToBasket}/>} exact/>)
                         })}
                         {offersList.map(offer => {
 
                             return (
                                 <Route path={`/${offer.region}/${offer.name.replaceAll(" ", "_")}`} key={destinations.length + offer.id} element={
-                                    <Offer addItemToBasket={addItemToBasket} itemCount={itemCount} key={offer.id} region={offer.region} name={offer.name} image={offer.image} destination={offer.destination} dates={offer.dates} cost={offer.cost}/>
+                                    <Offer addItemToBasket={addItemToBasket} key={offer.id} region={offer.region} name={offer.name} image={offer.image} destination={offer.destination} dates={offer.dates} cost={offer.cost}/>
                                 } exact/>)
                         })}
                         <Route path="*" element={<NotFound/>}/>

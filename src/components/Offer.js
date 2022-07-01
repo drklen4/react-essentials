@@ -40,7 +40,7 @@ const Offer = props => {
                 </li>
                 <li>
                     <div id={"add-offer-to-list"} style={{textAlign: "left", marginLeft: 100}}>
-                        <button onClick={() => props.addItemToBasket(props.name, props.itemCount)}>Add Offer to basket</button>
+                        <button onClick={() => props.addItemToBasket(props.name)}>Add Offer to basket</button>
                     </div>
                 </li>
             </ul>

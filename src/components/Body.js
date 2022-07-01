@@ -8,7 +8,7 @@ const Body = props => {
     return (
         <div className="App">
             {offersListFiltered.map(offer => {
-                return (<Offer addItemToBasket={props.addItemToBasket} itemCount={props.itemCount} key={offer.id} region={offer.region} name={offer.name} image={offer.image}
+                return (<Offer addItemToBasket={props.addItemToBasket} key={offer.id} region={offer.region} name={offer.name} image={offer.image}
                                destination={offer.destination} dates={offer.dates} cost={offer.cost}/>)
             })}
         </div>
