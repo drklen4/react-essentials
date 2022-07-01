@@ -22,21 +22,26 @@ const Offer = props => {
             </h4>
             <ul style={{justifyContent: "left"}}>
                 <li>
-                        <figure className="travel__image">
-                            <img src={image} style={{
-                                float: 'left',
-                                marginRight: 15,
-                                height: 350,
-                                width: 600,
-                                borderWidth: 1,
-                                borderRadius: 75
-                            }} alt="Offer"/>
-                        </figure>
+                    <figure className="travel__image">
+                        <img src={image} style={{
+                            float: 'left',
+                            marginRight: 15,
+                            height: 350,
+                            width: 600,
+                            borderWidth: 1,
+                            borderRadius: 75
+                        }} alt="Offer"/>
+                    </figure>
                 </li>
                 <li>
                     <p>Destination : {props.destination}</p>
                     <p>Dates: {props.dates}</p>
                     <p>Cost: {props.cost} $</p>
+                </li>
+                <li>
+                    <div id={"add-offer-to-list"} style={{textAlign: "left", marginLeft: 100}}>
+                        <button onClick={() => props.addItemToBasket(props.name, props.itemCount)}>Add Offer to basket</button>
+                    </div>
                 </li>
             </ul>
         </>
